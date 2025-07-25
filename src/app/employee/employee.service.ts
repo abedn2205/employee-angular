@@ -20,7 +20,7 @@ export class EmployeeService {
   private employeeSubject = new BehaviorSubject<Employee[]>([]);
 
   constructor() {
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 100; i++) {
       this.employees.push({
         id: i,
         username: `user${i}`,
