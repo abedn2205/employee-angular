@@ -33,4 +33,18 @@ node -v
 npm -v
 ng version
 
+
+1. Cara Menjalankan Aplikasi
+git clone https://github.com/abedn2205/employee-angular.git
+cd cd employee-management
+2. Install dependencies
+npm install
+3. Jalankan aplikasi (development mode)
+ng serve
+4. Buka di browser
+http://localhost:4200
+
+5 Fitur Login
+Username: admin
+Password: 123
 ```
