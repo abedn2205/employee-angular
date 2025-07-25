@@ -1,0 +1,116 @@
+<div class="p-6 max-w-2xl mx-auto bg-white shadow-lg rounded-lg">
+  <h2 class="text-2xl font-bold mb-6">Add Employee</h2>
+  <form [formGroup]="form" (ngSubmit)="save()" class="space-y-4">
+    <!-- Username -->
+    <div>
+      <label class="block font-medium">Username</label>
+      <input
+        formControlName="username"
+        type="text"
+        class="w-full border rounded px-3 py-2"
+      />
+    </div>
+
+    <!-- First Name & Last Name -->
+    <div class="flex gap-4">
+      <div class="flex-1">
+        <label class="block font-medium">First Name</label>
+        <input
+          formControlName="firstName"
+          type="text"
+          class="w-full border rounded px-3 py-2"
+        />
+      </div>
+      <div class="flex-1">
+        <label class="block font-medium">Last Name</label>
+        <input
+          formControlName="lastName"
+          type="text"
+          class="w-full border rounded px-3 py-2"
+        />
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label class="block font-medium">Email</label>
+      <input
+        formControlName="email"
+        type="email"
+        class="w-full border rounded px-3 py-2"
+      />
+    </div>
+
+    <!-- Birth Date -->
+    <div>
+      <label class="block font-medium">Birth Date</label>
+      <input
+        formControlName="birthDate"
+        type="date"
+        [max]="today"
+        class="w-full border rounded px-3 py-2"
+      />
+    </div>
+
+    <!-- Basic Salary -->
+    <div>
+      <label class="block font-medium">Basic Salary</label>
+      <input
+        formControlName="basicSalary"
+        type="text"
+        class="w-full border rounded px-3 py-2"
+      />
+    </div>
+
+    <!-- Status -->
+    <div>
+      <label class="block font-medium">Status</label>
+      <select formControlName="status" class="w-full border rounded px-3 py-2">
+        <option value="">Select Status</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+    </div>
+
+    <!-- Group with Search -->
+    <div>
+      <label class="block font-medium">Group</label>
+      <input
+        type="text"
+        placeholder="Search Group..."
+        (input)="filterGroups($event.target.value)"
+        class="w-full border rounded px-3 py-2 mb-2"
+      />
+      <select formControlName="group" class="w-full border rounded px-3 py-2">
+        <option *ngFor="let g of filteredGroups" [value]="g">{{ g }}</option>
+      </select>
+    </div>
+
+    <!-- Description -->
+    <div>
+      <label class="block font-medium">Description Date</label>
+      <input
+        formControlName="description"
+        type="date"
+        class="w-full border rounded px-3 py-2"
+      />
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex justify-end gap-4 mt-4">
+      <button
+        type="button"
+        (click)="cancel()"
+        class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>
